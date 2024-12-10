@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .result-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-text {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .positive {
+            color: #28a745; /* Hijau */
+            font-weight: bold;
+        }
+
+        .negative {
+            color: #dc3545; /* Merah */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container result-container">
+        <div class="card">
+            <h1 class="result-header">Analysis Result</h1>
+            <p class="result-text">
+                <strong>Your Input:</strong> "{{ user_input }}"
+            </p>
+            <p class="result-text">
+                <strong>Sentiment:</strong> 
+                <span class="{% if sentiment == 'Positif' %}positive{% else %}negative{% endif %}">
+                    {{ sentiment }}
+                </span>
+            </p>
+            <a href="/" class="btn btn-primary">Analyze Another Text</a>
+        </div>
+    </div>
+</body>
+</html>
